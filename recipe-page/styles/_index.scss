@@ -1,0 +1,171 @@
+@use "sass:map";
+@use "./reset";
+@use "./variables";
+@use "./base";
+@use "./mixins";
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap");
+
+body {
+  @include mixins.text("body1", 400);
+  font-family: variables.$font-outfit;
+  color: variables.$stone-600;
+  background-color: variables.$stone-100;
+
+  @media (min-width: 768px) {
+    padding-top: map.get(variables.$spacers, "xxl");
+    padding-bottom: map.get(variables.$spacers, "xxl");
+  }
+}
+
+.container {
+  max-width: 768px;
+  margin: auto;
+  background-color: variables.$white;
+
+  @media (min-width: 768px) {
+    padding: map.get(variables.$spacers, "xl");
+    border-radius: 20px;
+  }
+}
+
+.content {
+  padding: map.get(variables.$spacers, "xl");
+}
+
+// section
+.section {
+  margin-bottom: map.get(variables.$spacers, "lg");
+
+  &__title {
+    @include mixins.text("h2", 400);
+    margin-bottom: map.get(variables.$spacers, "md");
+    font-family: variables.$font-young-serif;
+    color: variables.$brown-800;
+  }
+
+  &__description {
+    margin-bottom: map.get(variables.$spacers, "lg");
+  }
+
+  &.ingredient,
+  &.instruction {
+    border-bottom: 1px solid variables.$stone-150;
+  }
+}
+
+// KV
+.kv {
+  &__image {
+    margin-bottom: map.get(variables.$spacers, "md");
+    border-bottom: none;
+
+    @media (min-width: 768px) {
+      border-radius: 10px;
+    }
+  }
+}
+
+// Summary
+.summary {
+  &__title {
+    @include mixins.text("h1", 400);
+    margin-bottom: map.get(variables.$spacers, "md");
+    font-family: variables.$font-young-serif;
+    color: variables.$stone-900;
+  }
+
+  &__description {
+    margin-bottom: map.get(variables.$spacers, "lg");
+  }
+
+  .note {
+    padding: map.get(variables.$spacers, "lg");
+    border-radius: 10px;
+    background-color: variables.$rose-50;
+
+    &__title {
+      @include mixins.text("subtitle", 600);
+      margin-bottom: map.get(variables.$spacers, "sm");
+      color: variables.$rose-800;
+    }
+
+    &__item {
+      margin-bottom: map.get(variables.$spacers, "xs");
+    }
+
+    &__item::marker {
+      color: variables.$rose-800;
+    }
+
+    .item__heading {
+      @include mixins.text("body1", 600);
+    }
+  }
+}
+
+// Ingredients
+.ingredient {
+  &__list {
+    margin-bottom: map.get(variables.$spacers, "lg");
+  }
+
+  &__list .item {
+    margin-bottom: map.get(variables.$spacers, "xs");
+  }
+
+  &__list .item::marker {
+    color: variables.$brown-800;
+  }
+}
+
+// Instructions
+.instruction {
+  &__list {
+    margin-bottom: map.get(variables.$spacers, "lg");
+    padding-left: map.get(variables.$spacers, "md");
+  }
+
+  &__list .item {
+    margin-bottom: map.get(variables.$spacers, "xs");
+    padding-left: map.get(variables.$spacers, "xs");
+  }
+
+  &__list .item::marker {
+    @include mixins.text("body1", 700);
+    color: variables.$brown-800;
+  }
+
+  &__list .item__subtitle {
+    @include mixins.text("body1", 700);
+  }
+}
+
+// Nutrition
+.nutrition {
+  &__table {
+    list-style-type: none;
+  }
+
+  &__table .item {
+    display: flex;
+    margin-bottom: map.get(variables.$spacers, "md");
+    padding-bottom: map.get(variables.$spacers, "xs");
+    padding-left: map.get(variables.$spacers, "xl");
+  }
+
+  &__table .item:not(:last-child) {
+    border-bottom: 1px solid variables.$stone-150;
+  }
+
+  &__table .item__heading,
+  &__table .item__value {
+    width: 50%;
+  }
+
+  &__table .item__value {
+    @include mixins.text("body1", 600);
+    color: variables.$brown-800;
+  }
+}
