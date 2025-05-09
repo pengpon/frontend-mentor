@@ -1,36 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Article preview component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Article preview component</title>
 
-  Shift the overall look and feel by adding these wonderful 
-  touches to furniture in your home
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <style>
+      .attribution { font-size: 11px; text-align: center; }
+      .attribution a { color: hsl(228, 45%, 44%); }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <section class="article">
+        <div class="article__media">
+          <img
+            class="image"
+            src="./images/drawers.jpg"
+            alt="article-thumbnail"
+          />
+        </div>
+        <div class="article__content">
+          <div class="article__body">
+            <h2 class="title">
+              Shift the overall look and feel by adding these wonderful touches
+              to furniture in your home
+            </h2>
+            <p class="description">
+              Ever been in a room and felt like something was missing? Perhaps
+              it felt slightly bare and uninviting. I’ve got some simple tips to
+              help you make any room feel complete.
+            </p>
+          </div>
 
-  Ever been in a room and felt like something was missing? Perhaps 
-  it felt slightly bare and uninviting. I’ve got some simple tips 
-  to help you make any room feel complete.
+          <div class="article__footer">
+            <div class="author">
+              <img
+                class="avatar"
+                src="./images/avatar-michelle.jpg"
+                alt="avatar"
+              />
+              <div class="info">
+                <p class="name">Michelle Appleton</p>
+                <span class="publish-time">28 Jun 2020</span>
+              </div>
+            </div>
+            <button class="action">
+              <div class="share-btn">
+                <svg
+                  class="share"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="15"
+                  height="13"
+                >
+                  <path
+                    fill="#6E8098"
+                    d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"
+                  />
+                </svg>
+              </div>
 
-  Michelle Appleton
-  28 Jun 2020
+              <div class="action--active">
+                <div class="social-media">
+                  <span class="title">SHARE</span>
+                  <a href="http://" target="_blank" rel="noopener noreferrer">
+                    <img
+                      src="./images/icon-facebook.svg"
+                      alt="facebook-share"
+                    />
+                  </a>
+                  <a href="http://" target="_blank" rel="noopener noreferrer">
+                    <img src="./images/icon-twitter.svg" alt="twitter-share" />
+                  </a>
+                  <a href="http://" target="_blank" rel="noopener noreferrer">
+                    <img
+                      src="./images/icon-pinterest.svg"
+                      alt="pinterest-share"
+                    />
+                  </a>
+                </div>
+                <div class="share-btn">
+                  <svg
+                    class="share"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="15"
+                    height="13"
+                  >
+                    <path
+                      fill="#6E8098"
+                      d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
 
-  Share
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Pon</a>.
+    </div>
+    <script src="./index.js"></script>
+  </body>
 </html>
