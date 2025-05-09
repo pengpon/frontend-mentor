@@ -1,1 +1,227 @@
-// index
+@use "sass:map";
+@use "./reset";
+@use "./variables" as v;
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Young+Serif&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: v.$gray-dark;
+  background-color: v.$gray-light;
+  line-height: 1.4;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+.container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: map.get(v.$spacers, "md");
+  font-family: "Manrope", sans-serif;
+}
+
+.article {
+  position: relative;
+  width: min(80vw, 450px);
+  min-width: 310px;
+  border-radius: map.get(v.$radius, "md");
+  background-color: v.$white;
+
+  @media (min-width: 1200px) {
+    display: flex;
+    width: 730px;
+  }
+
+  &__media {
+    margin-bottom: map.get(v.$spacers, "xs");
+    line-height: 0;
+
+    @media (min-width: 1200px) {
+      margin-bottom: 0;
+    }
+
+    .image {
+      width: 100%;
+      max-height: 256px;
+      object-fit: cover;
+      border-top-right-radius: map.get(v.$radius, "md");
+      border-top-left-radius: map.get(v.$radius, "md");
+
+      @media (min-width: 1200px) {
+        width: 285px;
+        height: 100%;
+        max-height: none;
+        border-top-right-radius: 0;
+        border-top-left-radius: map.get(v.$radius, "md");
+        border-bottom-left-radius: map.get(v.$radius, "md");
+      }
+    }
+  }
+
+  &__content {
+    padding: map.get(v.$spacers, "sm") map.get(v.$spacers, "sm") 0;
+  }
+
+  &__body {
+    margin-bottom: map.get(v.$spacers, "xs");
+
+    .title {
+      margin-bottom: map.get(v.$spacers, "xs");
+      font-size: map.get(v.$font-size, "h2");
+      font-weight: map.get(v.$font-weight, "bold");
+    }
+
+    .description {
+      font-size: map.get(v.$font-size, "body2");
+      font-weight: map.get(v.$font-weight, "normal");
+      color: v.$blue-dark;
+    }
+  }
+
+  &__footer,
+  .action--active {
+    height: 64px;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .author {
+      display: flex;
+      gap: 2rem;
+      width: 80%;
+    }
+
+    .author .avatar {
+      width: 2.6rem;
+      height: 2.6rem;
+      border-radius: map.get(v.$radius, "50%");
+    }
+
+    .info {
+      font-size: map.get(v.$font-size, "body2");
+    }
+
+    .info .name {
+      margin-bottom: map.get(v.$spacers, "xxs");
+      font-weight: map.get(v.$font-weight, "bold");
+    }
+
+    .info .publish-time {
+      color: v.$gray-blue;
+    }
+
+    .action {
+      width: 2rem;
+      height: 2rem;
+      border-radius: map.get(v.$radius, "50%");
+      border: none;
+
+      @media (min-width: 1200px) {
+        position: relative;
+      }
+    }
+  }
+
+  .action.show {
+    background-color: v.$blue-dark;
+
+    .share-btn .share path {
+      fill: v.$gray-light;
+    }
+
+    .action--active {
+      visibility: visible;
+    }
+  }
+
+  .action--active {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 0 map.get(v.$spacers, "sm");
+    font-size: map.get(v.$font-size, "body2");
+    letter-spacing: 0.3rem;
+    border-bottom-right-radius: map.get(v.$radius, "md");
+    border-bottom-left-radius: map.get(v.$radius, "md");
+    color: v.$gray-blue;
+    background-color: v.$gray-dark;
+    visibility: hidden;
+
+    @media (min-width: 1200px) {
+      position: absolute;
+      top: calc(-55px - 26px);
+      left: calc(-125px + 16px);
+      width: 250px;
+      height: 55px;
+      border-radius: map.get(v.$radius, "md");
+      box-shadow: 0 10px 10px hsl(217, 19%, 80%);
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -12px;
+        width: 0px;
+        height: 0px;
+        margin: auto;
+        border-width: 16px 13px 0 13px;
+        border-style: solid;
+        border-color: v.$gray-dark transparent transparent transparent;
+        transform: rotate(0deg);
+      }
+
+      .share-btn {
+        visibility: hidden;
+      }
+    }
+
+    .social-media {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .share-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: map.get(v.$radius, "50%");
+      background-color: v.$blue-dark;
+
+      .share path {
+        fill: v.$gray-light;
+      }
+    }
+  }
+}
+
+.attribution {
+  position: absolute;
+  right: 0;
+  bottom: map.get(v.$spacers, "md");
+  left: 0;
+  margin: auto;
+}

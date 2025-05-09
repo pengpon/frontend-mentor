@@ -1,0 +1,39 @@
+// color
+$white: hsl(0 0% 100%);
+$gray-dark: hsl(217, 19%, 35%);
+$gray-light: hsl(210, 46%, 95%);
+$gray-blue: hsl(212, 23%, 69%);
+$blue-dark: hsl(214, 17%, 51%);
+
+// typography
+$font-size: (
+  "h2": 1.2rem,
+  "h3": 1rem,
+  "body1": 0.9rem,
+  "body2": 0.85rem,
+  "caption": 0.7rem,
+);
+
+$font-weight: (
+  "normal": 500,
+  "bold": 700,
+);
+
+// spacing
+$spacer: 1rem;
+$spacers: (
+  "0": 0,
+  "xxs": $spacer * 0.3,
+  "xs": $spacer * 1,
+  "sm": $spacer * 2,
+  "md": $spacer * 3,
+  "lg": $spacer * 4,
+  "xl": $spacer * 5,
+  "xxl": $spacer * 24,
+);
+
+// radius
+$radius: (
+  "md": 10px,
+  "50%": 50%,
+);
